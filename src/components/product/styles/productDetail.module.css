@@ -1,0 +1,111 @@
+.productContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #2C3E50;
+    letter-spacing: 1px;
+}
+
+.productDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.productDetails:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.productDetails img {
+    border-radius: 12px;
+    object-fit: cover;
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.productDetails img:hover {
+    transform: scale(1.05);
+}
+
+.detailsText {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.2rem;
+}
+
+.detailsText p {
+    font-size: 1.2rem;
+    color: #34495E;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.detailsText strong {
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.detailsText p:hover {
+    color: #1ABC9C;
+}
+
+.detailsText button {
+    align-self: center;
+    padding: 1rem 2rem;
+    background-color: #3498DB;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detailsText button:hover {
+    background-color: #2980B9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.detailsText button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .productDetails {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detailsText {
+        max-width: 100%;
+    }
+
+    .productDetails img {
+        max-width: 100%;
+        height: auto;
+    }
+}

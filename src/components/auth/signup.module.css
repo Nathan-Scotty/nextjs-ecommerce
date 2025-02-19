@@ -1,0 +1,146 @@
+/* Container for the form */
+.form {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f7f7f7, #ffffff);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* Title Styling */
+.signupTitle {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Form Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Image Styling */
+.right {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Content Styling */
+.left {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Label Styling */
+.container label {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 500;
+}
+
+/* Input Styling */
+.container input,
+.container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+}
+
+.container input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Buttons Container */
+.clearfix {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Button Styling */
+.signupbtn, .cancelbtn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.signupbtn {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+}
+
+.signupbtn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.cancelbtn {
+    background-color: #dc3545;
+    color: white;
+    font-weight: bold;
+}
+
+.cancelbtn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Sign Up Link Styling */
+.signupLink {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.signupLink:hover {
+    color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right {
+        max-width: 100%;
+    }
+
+    .clearfix {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
