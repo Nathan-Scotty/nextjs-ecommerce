@@ -4,17 +4,32 @@ import styles from '../../styles/Navbar.module.css';
 import { useCart } from './cart/hooks/useCart';
 import { FaShoppingCart } from 'react-icons/fa';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
     const [cartUserId, setCartUserId] = useState(null);
     const { getCartItemCount } = useCart()
+    const router = useRouter();
 
     useEffect(() => {
         const storedUserId = localStorage.getItem("userId");
+        const token = localStorage.getItem('authToken');
+
+        if (!token) {
+            router.push('/login');
+            return;
+        }
         if (storedUserId) {
             setCartUserId(storedUserId);
         }
     }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem('userId');
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('userRole');
+        window.location.href = '/login';
+    };
 
     return (
         <header className={styles.header}>
@@ -33,6 +48,9 @@ export default function Navbar() {
                                 <FaShoppingCart className={styles.cartIcon} />
                                 <span className={styles.cartCount}>{getCartItemCount()}</span>
                             </Link>
+                        </li>
+                        <li>
+                            <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
                         </li>
                     </ul>
                 </nav>

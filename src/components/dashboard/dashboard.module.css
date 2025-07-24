@@ -47,6 +47,7 @@
     color: #ffffff;
     padding: 7px 15px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .sidebar {

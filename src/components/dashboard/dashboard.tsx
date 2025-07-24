@@ -1,7 +1,25 @@
 import Link from "next/link"
 import styles from './dashboard.module.css'
+import { useRouter } from "next/router"
+import { useEffect } from "react";
 
 export default function Dashboard() {
+
+    const router = useRouter();
+
+    useEffect(() => {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            router.push('/login')
+        }
+    }, [])
+
+    const handleLogout = () => {
+        localStorage.removeItem('userId');
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('userRole');
+        window.location.href = '/login';
+    };
 
     return (
         <div className={styles.container}>
@@ -15,7 +33,7 @@ export default function Dashboard() {
                         <li><Link href="/admin/messages">Messages</Link></li>
                         <li><Link href="/admin/notifications">Notifications</Link></li>
                         <li><Link href="/admin/settings">Settings</Link></li>
-                        <li><Link href="/admin/logout" className={styles.logout_btn}>Logout</Link></li>
+                        <li><button onClick={handleLogout} className={styles.logout_btn}>Logout</button></li>
                     </ul>
                 </nav>
             </header>

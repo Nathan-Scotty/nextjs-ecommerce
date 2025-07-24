@@ -80,6 +80,25 @@
     right: -10px;
 }
 
+.logoutButton {
+    background-color: #f8b400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logoutButton:hover {
+    background-color: #f4a261;
+    transform: scale(1.05);
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .container {

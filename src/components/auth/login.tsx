@@ -12,9 +12,9 @@ export default function Login() {
     const [loading, setLoading] = useState(false);
 
     const handleCancel = () => {
-        setEmail(""),
-            setPassword(""),
-            setErrorMessage("")
+        setEmail("");
+        setPassword("");
+        setErrorMessage("");
     }
 
     const handleSignup = async (e) => {
